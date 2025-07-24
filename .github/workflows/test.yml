@@ -21,7 +21,15 @@ jobs:
           mkdir hello goodbye
 
       - name: Run `ls` on current directory
-        run: ls -la
+        run: |
+          echo '## `ls -la` output' >>"${GITHUB_STEP_SUMMARY}"
+          echo '```' >>"${GITHUB_STEP_SUMMARY}"
+          ls -la | tee -a "${GITHUB_STEP_SUMMARY}"
+          echo '```' >>"${GITHUB_STEP_SUMMARY}"
 
       - name: Run `eza` on current directory
-        run: ./eza -la
+        run: |
+          echo '## `./eza -la` output' >>"${GITHUB_STEP_SUMMARY}"
+          echo '```' >>"${GITHUB_STEP_SUMMARY}"
+          ./eza -la
+          echo '```' >>"${GITHUB_STEP_SUMMARY}"
