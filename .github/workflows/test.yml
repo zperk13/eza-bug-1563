@@ -29,9 +29,9 @@ jobs:
           ls -la | tee -a "${GITHUB_STEP_SUMMARY}"
           echo '```' >>"${GITHUB_STEP_SUMMARY}"
 
-      - name: Run `cat`
+      - name: in or noin
         run: |
-          echo '## `cat` output' >>"${GITHUB_STEP_SUMMARY}"
+          echo '## in or noin?' >>"${GITHUB_STEP_SUMMARY}"
           echo '```' >>"${GITHUB_STEP_SUMMARY}"
-          cat | tee -a "${GITHUB_STEP_SUMMARY}"
+          (if [ -p /dev/stdin ]; then echo in; else echo noin; fi) | tee -a "${GITHUB_STEP_SUMMARY}"
           echo '```' >>"${GITHUB_STEP_SUMMARY}"
