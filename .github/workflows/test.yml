@@ -29,9 +29,9 @@ jobs:
           ls -la | tee -a "${GITHUB_STEP_SUMMARY}"
           echo '```' >>"${GITHUB_STEP_SUMMARY}"
 
-      - name: Run `eza` on current directory
+      - name: Run `cat`
         run: |
-          echo '## `./eza -la` output' >>"${GITHUB_STEP_SUMMARY}"
+          echo '## `cat` output' >>"${GITHUB_STEP_SUMMARY}"
           echo '```' >>"${GITHUB_STEP_SUMMARY}"
-          ./eza -la | tee -a "${GITHUB_STEP_SUMMARY}"
+          cat | tee -a "${GITHUB_STEP_SUMMARY}"
           echo '```' >>"${GITHUB_STEP_SUMMARY}"
