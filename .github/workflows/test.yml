@@ -31,5 +31,5 @@ jobs:
         run: |
           echo '## `./eza -la` output' >>"${GITHUB_STEP_SUMMARY}"
           echo '```' >>"${GITHUB_STEP_SUMMARY}"
-          ./eza -la | tee -a "${GITHUB_STEP_SUMMARY}"
+          ./eza -la . | tee -a "${GITHUB_STEP_SUMMARY}"
           echo '```' >>"${GITHUB_STEP_SUMMARY}"
